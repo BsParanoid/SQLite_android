@@ -9,6 +9,17 @@ Au moment de la création de la base de données la méthode _**void onCreate(SQ
 
 #### 1.2 Composition de "CREATE TABLE"
 
+La commande "CREATE TABLE" est utilisée pour créer une nouvelle table dans une base de données SQLite. Une commande CREATE TABLE spécifie les attributs suivants de la nouvelle table :
+
+* Nom de la nouvelle table.
+* Le type déclaré de chaque colonne dans le tableau.
+* Valeur ou expression par défaut pour chaque colonne de la table.
+* Une séquence de classement par défaut à utiliser avec chaque colonne.
+* Optionnellement, une PRIMARY KEY pour la table. Les clés primaires à une seule colonne et composites (plusieurs colonnes) sont prises en charge.
+* Un ensemble de contraintes SQL pour chaque table. SQLite prend en charge les contraintes UNIQUE, NOT NULL, CHECK et FOREIGN KEY.
+*  Si la table est une table WITHOUT ROWID.
+
+
 ```java
 public class DatabaseHandler extends SQLiteOpenHelper
 {
