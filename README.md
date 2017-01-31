@@ -25,3 +25,12 @@ public class DatabaseHandler extends SQLiteOpenHelper
                     DB_AGE + " REAL);";
 }
 ```
+
+**Voici la représentation de la table SQLite**
+
+
+| name          | surname       | age   |
+| ------------- |:-------------:| -----:|
+| XXXX          | XXXX          |  XX   |
+| XXXX          | XXXX          |  XX   |
+| XXXX          | XXXX          |  XX   |
