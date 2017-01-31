@@ -19,10 +19,10 @@ public class DatabaseHandler extends SQLiteOpenHelper
 
     public static final String DB_TABLE_PEOPLE_CREATE =
             "CREATE TABLE " + DB_TABLE_PEOPLE + " (" +
-                    DB_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    DB_NAME + " TEXT, " +
-                    DB_SURNAME + " TEXT, " +
-                    DB_AGE + " REAL);";
+                    DB_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, " + // ID KEY auto increm
+                    DB_NAME + " TEXT, " +                             // colonne de la table
+                    DB_SURNAME + " TEXT, " +                          // colonne de la table
+                    DB_AGE + " REAL);";                               // colonne de la table
 
     public DatabaseHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
