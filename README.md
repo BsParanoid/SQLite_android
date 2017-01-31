@@ -8,11 +8,12 @@ Au moment de la création de la base de données la méthode _**void onCreate(SQ
 ##1. Création de la Table avec ses différentes colonnes 
 
 ```java
-public class DatabaseHandler extends SQLiteOpenHelper {
-    public static final String DB_KEY = "id";               Clef ID qui est un entier auto-incrémental
-    public static final String DB_NAME = "name";            Nom d'une colonnes de la TABLE BD_TABLE_PEOPLE
-    public static final String DB_SURNAME = "surname";      Nom d'une colonnes de la TABLE BD_TABLE_PEOPLE
-    public static final String DB_AGE = "age";              Nom d'une colonnes de la TABLE BD_TABLE_PEOPLE
+public class DatabaseHandler extends SQLiteOpenHelper 
+{
+    public static final String DB_KEY = "id";               //Clef ID qui est un entier auto-incrémental
+    public static final String DB_NAME = "name";            //Nom d'une colonnes de la TABLE BD_TABLE_PEOPLE
+    public static final String DB_SURNAME = "surname";      //Nom d'une colonnes de la TABLE BD_TABLE_PEOPLE
+    public static final String DB_AGE = "age";              //Nom d'une colonnes de la TABLE BD_TABLE_PEOPLE
 
     public static final String DB_TABLE_PEOPLE = "people";
 
