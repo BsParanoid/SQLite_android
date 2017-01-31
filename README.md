@@ -40,12 +40,12 @@ public class DatabaseHandler extends SQLiteOpenHelper
                     DB_SURNAME + " TEXT, " +                          // colonne de la table
                     DB_AGE + " REAL);";                               // colonne de la table
 
-   /*   **public constructeur DatabaseHandler**
-    **  Créer un objet helper pour créer, ouvrir, et/ou manager une database.
-    **  La database n'est actuellement pas créer ou ouverte tant que getWritableDatabase() ou 
-    **  getReadableDatabase() 
-    **  n'est appellé.
-    */
+    /**  public constructeur DatabaseHandler
+     *  Créer un objet helper pour créer, ouvrir, et/ou manager une database.
+     *  La database n'est actuellement pas créer ou ouverte tant que getWritableDatabase() ou 
+     *  getReadableDatabase() 
+     *  n'est appellé.
+     */
     public DatabaseHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version)
     {
         super(context, name, factory, version);
