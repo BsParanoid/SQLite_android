@@ -7,6 +7,7 @@ Au moment de la création de la base de données la méthode _**void onCreate(SQ
 
 1. Création de la Table avec ses différentes colonnes 
 
+{
 public class DatabaseHandler extends SQLiteOpenHelper
 {
     public static final String DB_KEY = "id";              // Clef **ID** qui est un entier auto-incrémental
