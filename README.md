@@ -22,4 +22,3 @@ public class DatabaseHandler extends SQLiteOpenHelper
                     DB_NAME + " TEXT, " +
                     DB_SURNAME " TEXT, " +
                     DB_AGE + " REAL);";
-
