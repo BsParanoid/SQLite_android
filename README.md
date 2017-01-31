@@ -37,17 +37,20 @@ public class DatabaseHandler extends SQLiteOpenHelper
                     DB_SURNAME + " TEXT, " +                          // colonne de la table
                     DB_AGE + " REAL);";                               // colonne de la table
 
-    public DatabaseHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    public DatabaseHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version)
+    {
         super(context, name, factory, version);
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db) {
+    public void onCreate(SQLiteDatabase db) // fonction de création et d'initialisation de table
+    {
         db.execSQL(DB_TABLE_PEOPLE_CREATE);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) 
+    {
 
     }
 }
