@@ -33,12 +33,12 @@ public class DatabaseHandler extends SQLiteOpenHelper
 
     public static final String DB_TABLE_PEOPLE = "people";
 
-    public static final String DB_TABLE_PEOPLE_CREATE =
-            "CREATE TABLE " + DB_TABLE_PEOPLE + " (" +
-                    DB_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, " + // ID KEY auto increm
-                    DB_NAME + " TEXT, " +                             // colonne de la table
-                    DB_SURNAME + " TEXT, " +                          // colonne de la table
-                    DB_AGE + " REAL);";                               // colonne de la table
+    public static final String DB_TABLE_PEOPLE_CREATE ="CREATE TABLE " + 
+                    DatabaseHandler.DB_TABLE_PEOPLE + " (" +
+                    DatabaseHandler.DB_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, " + // ID KEY auto increm
+                    DatabaseHandler.DB_NAME + " TEXT, " +                             // colonne de la table
+                    DatabaseHandler.DB_SURNAME + " TEXT, " +                          // colonne de la table
+                    DatabaseHandler.DB_AGE + " REAL);";                               // colonne de la table
 
     /**  public constructeur DatabaseHandler
      *  Créer un objet helper pour créer, ouvrir, et/ou manager une database.
@@ -58,9 +58,11 @@ public class DatabaseHandler extends SQLiteOpenHelper
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) 
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) // mise à jour BDD
     {
-
+        db.execSQL(DatabaseHandler.DB_TABLE_PEOPLE); // Suppression de l'ancienne base de données
+        
+        onCreate(db); // upgrade des nouvelles données
     }
 }
 ```
