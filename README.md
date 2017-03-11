@@ -2,6 +2,9 @@
 Utilisation basique
 
 [SQLiteOpenHelper doc](https://developer.android.com/reference/android/database/sqlite/SQLiteOpenHelper.html#)
+[Tutorial from vogella](http://www.vogella.com/tutorials/AndroidSQLite/article.html)
+[vogella tutoriel traduit français](http://vogella.developpez.com/tutoriels/android/utilisation-base-donnees-sqlite/)
+
 
 
 La classe principal qui permet la création de la base de données est **SQLiteOpenHelper**
