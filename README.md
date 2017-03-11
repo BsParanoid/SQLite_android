@@ -24,54 +24,38 @@ La commande "CREATE TABLE" est utilisée pour créer une nouvelle table dans une
 
 
 ```java
-public class DatabaseHandler extends SQLiteOpenHelper
+public class MySQLiteHelper extends SQLiteOpenHelper
 {
-    public static final String DB_KEY = "id";
-    public static final String DB_NAME = "name";
-    public static final String DB_SURNAME = "surname";
-    public static final String DB_AGE = "age";
 
-    public static final String DB_TABLE_PEOPLE = "people";
+    public static final String TABLE_NAME = "comments";
+    public static final String TABLE_COLUMN_ID = "_id";
+    public static final String TABLE_COLUMN_COMMENT = "comment";
 
-    public static final String DB_TABLE_PEOPLE_CREATE ="CREATE TABLE " + 
-                    DatabaseHandler.DB_TABLE_PEOPLE + " (" +
-                    DatabaseHandler.DB_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, " + // ID KEY auto increm
-                    DatabaseHandler.DB_NAME + " TEXT, " +                             // colonne de la table
-                    DatabaseHandler.DB_SURNAME + " TEXT, " +                          // colonne de la table
-                    DatabaseHandler.DB_AGE + " REAL);";                               // colonne de la table
+    private static final String DATABASE_NAME = "commments.db";
+    private static final int DATABASE_VERSION = 1;
 
-    /**  public constructeur DatabaseHandler
-     *  Créer un objet helper pour créer, ouvrir, et/ou manager une database.
-     *  La database n'est actuellement pas créer ou ouverte tant que getWritableDatabase() ou 
-     *  getReadableDatabase() 
-     *  n'est appellé.
-     */
-    public DatabaseHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version)
-    {
-        super(context, name, factory, version);
-    }
-    
-    @Override
-    public void onCreate(SQLiteDatabase db) // fonction de création et d'initialisation de table
-    {
-        db.execSQL(DB_TABLE_PEOPLE_CREATE);
+    // Commande sql pour la création de la base de données
+    private static final String DATABASE_CREATE = "create table "
+            + TABLE_NAME + "(" + TABLE_COLUMN_ID
+            + " integer primary key autoincrement, " + TABLE_COLUMN_COMMENT
+            + " text not null);";
+
+    public MySQLiteHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) // mise à jour BDD
-    {
-        db.execSQL(DatabaseHandler.DB_TABLE_PEOPLE); // Suppression de l'ancienne base de données
-        
-        onCreate(db); // upgrade des nouvelles données
+    public void onCreate(SQLiteDatabase database) {
+        database.execSQL(DATABASE_CREATE);
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        Log.w(MySQLiteHelper.class.getName(),
+                "Upgrading database from version " + oldVersion + " to "
+                        + newVersion + ", which will destroy all old data");
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        onCreate(db);
     }
 }
 ```
-
-**Voici la représentation de la table SQLite**
-
-
-| name          | surname       | age   |
-| ------------- |:-------------:| -----:|
-| XXXX          | XXXX          |  XX   |
-| XXXX          | XXXX          |  XX   |
-| XXXX          | XXXX          |  XX   |
