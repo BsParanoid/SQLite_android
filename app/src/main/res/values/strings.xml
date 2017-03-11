@@ -1,5 +1,0 @@
-<resources>
-    <string name="app_name">SQLiteTuroriel</string>
-    <string name="go_to_data_base">Go to data base</string>
-    <string name="list_view_that_display_every_content_of_table_db">List view that display every content of table DB</string>
-</resources>
