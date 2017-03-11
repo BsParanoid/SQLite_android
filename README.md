@@ -9,6 +9,13 @@ Utilisation basique
 
 
 
+![alt tag](https://github.com/BsParanoid/SQLite_android/blob/master/screenshots/mainScreen.pdf)
+
+![alt tag](https://github.com/BsParanoid/SQLite_android/blob/master/screenshots/test.png)
+
+![alt tag](https://github.com/BsParanoid/SQLite_android/blob/master/screenshots/ok.png)
+
+
 La classe principal qui permet la création de la base de données est **SQLiteOpenHelper**
 
 Au moment de la création de la base de données la méthode _**void onCreate(SQLiteDatabase db)**_ est appellé le paramètre db est la base.
